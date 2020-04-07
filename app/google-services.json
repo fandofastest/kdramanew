@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "193189332381",
+    "firebase_url": "https://kdrama-49490.firebaseio.com",
+    "project_id": "kdrama-49490",
+    "storage_bucket": "kdrama-49490.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193189332381:android:3c300b71673d3fad791b74",
+        "android_client_info": {
+          "package_name": "com.kdrama.newappkorean"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "193189332381-8l6k5sr456cg68vouljl3bfs2k4m035i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgI6GDDliYrjqBgd7x-NksRrXGvBH0W-o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "193189332381-8l6k5sr456cg68vouljl3bfs2k4m035i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
