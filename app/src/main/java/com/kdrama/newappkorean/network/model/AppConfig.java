@@ -20,7 +20,19 @@ public class AppConfig {
     @Expose
     private Boolean countryVisible;
 
+    @SerializedName("statusku")
+    @Expose
+    private String statusku;
+
     public AppConfig() {
+    }
+
+    public String getStatusku() {
+        return statusku;
+    }
+
+    public void setStatusku(String statusku) {
+        this.statusku = statusku;
     }
 
     public String getMenu() {

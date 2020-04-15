@@ -137,6 +137,8 @@ public class SplashScreenActivity extends AppCompatActivity {
                         ApiResources.RAVE_ENCRYPTION_KEY = configuration.getPaymentConfig().getReveEncryptionKey();
                         ApiResources.RAVE_PUBLIC_KEY = configuration.getPaymentConfig().getRevePublicKey();
                         ApiResources.EXCHSNGE_RATE = configuration.getPaymentConfig().getExchangeRate();
+                        ApiResources.statusku=configuration.getAppConfig().getStatusku();
+                        System.out.println("coba "+ApiResources.statusku);
                         //save genre, country and tv category list to constants
                         Constants.genreList = configuration.getGenre();
                         Constants.countryList = configuration.getCountry();

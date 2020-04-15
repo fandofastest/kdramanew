@@ -33,6 +33,7 @@ import com.kdrama.newappkorean.network.model.ActiveStatus;
 import com.kdrama.newappkorean.network.model.ActiveSubscription;
 import com.kdrama.newappkorean.network.model.SubscriptionHistory;
 import com.kdrama.newappkorean.network.model.User;
+import com.kdrama.newappkorean.utils.ApiResources;
 import com.kdrama.newappkorean.utils.PreferenceUtils;
 import com.kdrama.newappkorean.utils.NetworkInst;
 
@@ -76,33 +77,45 @@ public class SubscriptionActivity extends AppCompatActivity implements ActiveSub
         } else {
             setTheme(R.style.AppThemeLight);
         }
-        setContentView(R.layout.activity_subscription);
 
-        intiView();
+        if (ApiResources.statusku.equals("aman")){
+            setContentView(R.layout.activity_subscription);
 
-        // change toolbar color as theme color
-        if (isDark) {
-            mToolbar.setBackgroundColor(getResources().getColor(R.color.black_window_light));
 
-            historyView.setBackgroundColor(getResources().getColor(R.color.black_1_transarent));
-            activeView.setBackgroundColor(getResources().getColor(R.color.black_1_transarent));
-            activeTitleLayout.setBackgroundColor(getResources().getColor(R.color.black_transparent));
-            historyTitleLayout.setBackgroundColor(getResources().getColor(R.color.black_transparent));
-            historyHeaderLayout.setBackgroundColor(getResources().getColor(R.color.black_1_transarent));
-            mUpgradeBt.setBackground(getResources().getDrawable(R.drawable.btn_rounded_primary));
+            intiView();
+
+            // change toolbar color as theme color
+            if (isDark) {
+                mToolbar.setBackgroundColor(getResources().getColor(R.color.black_window_light));
+
+                historyView.setBackgroundColor(getResources().getColor(R.color.black_1_transarent));
+                activeView.setBackgroundColor(getResources().getColor(R.color.black_1_transarent));
+                activeTitleLayout.setBackgroundColor(getResources().getColor(R.color.black_transparent));
+                historyTitleLayout.setBackgroundColor(getResources().getColor(R.color.black_transparent));
+                historyHeaderLayout.setBackgroundColor(getResources().getColor(R.color.black_1_transarent));
+                mUpgradeBt.setBackground(getResources().getDrawable(R.drawable.btn_rounded_primary));
+            }
+
+            setSupportActionBar(mToolbar);
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().setTitle("My Subscription");
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            }
+
+            mInactiveRv.setLayoutManager(new LinearLayoutManager(this));
+            mInactiveRv.setHasFixedSize(true);
+            mInactiveRv.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+
+            userId = PreferenceUtils.getUserId(SubscriptionActivity.this);
+
+        }
+        else{
+            setContentView(R.layout.activity_comingsoon);
+
         }
 
-        setSupportActionBar(mToolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("My Subscription");
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
 
-        mInactiveRv.setLayoutManager(new LinearLayoutManager(this));
-        mInactiveRv.setHasFixedSize(true);
-        mInactiveRv.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
-        userId = PreferenceUtils.getUserId(SubscriptionActivity.this);
 
     }
 
@@ -198,48 +211,54 @@ public class SubscriptionActivity extends AppCompatActivity implements ActiveSub
     protected void onStart() {
         super.onStart();
 
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                shimmerFrameLayout.startShimmer();
-                shimmerFrameLayout.setVisibility(View.VISIBLE);
-                swipeRefreshLayout.setVisibility(View.GONE);
-                if (new NetworkInst(SubscriptionActivity.this).isNetworkAvailable()) {
-                    getSubscriptionHistory();
-                    getActiveSubscriptionFromDatabase();
-                } else {
-                    shimmerFrameLayout.setVisibility(View.GONE);
-                    shimmerFrameLayout.stopShimmer();
-                    swipeRefreshLayout.setRefreshing(false);
-                    mNoInternetLayout.setVisibility(View.VISIBLE);
-                    mSubRootLayout.setVisibility(View.GONE);
-                    progressBar.setVisibility(View.GONE);
+        if (ApiResources.statusku.equals("aman")) {
+
+
+            swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                @Override
+                public void onRefresh() {
+                    shimmerFrameLayout.startShimmer();
+                    shimmerFrameLayout.setVisibility(View.VISIBLE);
+                    swipeRefreshLayout.setVisibility(View.GONE);
+                    if (new NetworkInst(SubscriptionActivity.this).isNetworkAvailable()) {
+                        getSubscriptionHistory();
+                        getActiveSubscriptionFromDatabase();
+                    } else {
+                        shimmerFrameLayout.setVisibility(View.GONE);
+                        shimmerFrameLayout.stopShimmer();
+                        swipeRefreshLayout.setRefreshing(false);
+                        mNoInternetLayout.setVisibility(View.VISIBLE);
+                        mSubRootLayout.setVisibility(View.GONE);
+                        progressBar.setVisibility(View.GONE);
+                    }
                 }
+            });
+
+            shimmerFrameLayout.startShimmer();
+            swipeRefreshLayout.setVisibility(View.GONE);
+
+            if (new NetworkInst(this).isNetworkAvailable()) {
+                getSubscriptionHistory();
+                getActiveSubscriptionFromDatabase();
+            } else {
+
+                shimmerFrameLayout.setVisibility(View.GONE);
+                shimmerFrameLayout.stopShimmer();
+                swipeRefreshLayout.setRefreshing(false);
+                mNoInternetLayout.setVisibility(View.VISIBLE);
+                mSubRootLayout.setVisibility(View.GONE);
+                progressBar.setVisibility(View.GONE);
             }
-        });
 
-        shimmerFrameLayout.startShimmer();
-        swipeRefreshLayout.setVisibility(View.GONE);
+            mUpgradeBt.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(SubscriptionActivity.this, PurchasePlanActivity.class));
+                }
+            });
 
-        if (new NetworkInst(this).isNetworkAvailable()) {
-            getSubscriptionHistory();
-            getActiveSubscriptionFromDatabase();
-        } else {
 
-            shimmerFrameLayout.setVisibility(View.GONE);
-            shimmerFrameLayout.stopShimmer();
-            swipeRefreshLayout.setRefreshing(false);
-            mNoInternetLayout.setVisibility(View.VISIBLE);
-            mSubRootLayout.setVisibility(View.GONE);
-            progressBar.setVisibility(View.GONE);
         }
-
-        mUpgradeBt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SubscriptionActivity.this, PurchasePlanActivity.class));
-            }
-        });
     }
 
     @Override

@@ -14,7 +14,7 @@ public class ApiResources {
     // Create your Rave live keys from the Rave Dashboard and put them below when you are about to publish on Play Store
     public static String RAVE_PUBLIC_KEY;
     public static String RAVE_ENCRYPTION_KEY;
-
+    public static String statusku;
 
     public static String PAY_STACK_PUBLIC_KEY;
 
