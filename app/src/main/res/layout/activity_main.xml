@@ -125,4 +125,10 @@
     </com.google.android.material.navigation.NavigationView>
 
 
+    <include
+
+        android:id="@+id/llProgressBar"
+        android:visibility="gone"
+        layout="@layout/layout_progress"/>
+
 </androidx.drawerlayout.widget.DrawerLayout>

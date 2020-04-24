@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.kdrama.newappkorean"
+    package="com.koreandrama.newappkorean"
     tools:ignore="MissingLeanbackLauncher">
 
 
@@ -21,7 +21,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
-        android:name="com.kdrama.newappkorean.utils.MyAppClass"
+        android:name="com.koreandrama.newappkorean.utils.MyAppClass"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -31,24 +31,24 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name="com.kdrama.newappkorean.SearchActivity" />
-        <activity android:name="com.kdrama.newappkorean.FirebaseSignUpActivity" />
-        <activity android:name="com.kdrama.newappkorean.EventPaymentStripeActivity" />
+        <activity android:name="com.koreandrama.newappkorean.SearchActivity" />
+        <activity android:name="com.koreandrama.newappkorean.FirebaseSignUpActivity" />
+        <activity android:name="com.koreandrama.newappkorean.EventPaymentStripeActivity" />
 
         <activity
-            android:name="com.kdrama.newappkorean.TestActivity"
+            android:name="com.koreandrama.newappkorean.TestActivity"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Nobar" />
         <activity
-            android:name="com.kdrama.newappkorean.SearchFilterActivity"
+            android:name="com.koreandrama.newappkorean.SearchFilterActivity"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Nobar" />
         <activity
-            android:name="com.kdrama.newappkorean.PapalPaymentActivity"
+            android:name="com.koreandrama.newappkorean.PapalPaymentActivity"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Nobar" />
         <activity
-            android:name="com.kdrama.newappkorean.WebViewActivity"
+            android:name="com.koreandrama.newappkorean.WebViewActivity"
             android:screenOrientation="fullSensor" />
 
         <meta-data
@@ -65,49 +65,53 @@
             android:value="@string/facebook_application_id" />
 
         <activity
-            android:name="com.kdrama.newappkorean.TermsActivity"
+            android:name="com.koreandrama.newappkorean.TermsActivity"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Nobar" />
         <activity
-            android:name="com.kdrama.newappkorean.ReplyActivity"
+            android:name="com.koreandrama.newappkorean.ReplyActivity"
             android:label="@string/title_activity_reply"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.kdrama.newappkorean.ProfileActivity"
+            android:name="com.koreandrama.newappkorean.ProfileActivity"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Nobar" />
         <activity
-            android:name="com.kdrama.newappkorean.PassResetActivity"
+            android:name="com.koreandrama.newappkorean.PassResetActivity"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Nobar" />
         <activity
-            android:name="com.kdrama.newappkorean.SearchResultActivity"
+            android:name="com.koreandrama.newappkorean.SearchResultActivity"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Nobar" />
         <activity
-            android:name="com.kdrama.newappkorean.SignUpActivity"
+            android:name="com.koreandrama.newappkorean.SignUpActivity"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Nobar" />
         <activity
-            android:name="com.kdrama.newappkorean.LoginActivity"
+            android:name="com.koreandrama.newappkorean.UpdateActivity"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Nobar" />
         <activity
-            android:name="com.kdrama.newappkorean.DetailsActivity"
+            android:name="com.koreandrama.newappkorean.LoginActivity"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.Nobar" />
+        <activity
+            android:name="com.koreandrama.newappkorean.DetailsActivity"
             android:configChanges="screenLayout|screenSize|orientation"
             android:label="@string/title_activity_details"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- android:configChanges="screenLayout|screenSize|orientation" -->
         <activity
-            android:name="com.kdrama.newappkorean.MainActivity"
+            android:name="com.koreandrama.newappkorean.MainActivity"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Nobar"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.kdrama.newappkorean.SettingsActivity"
+            android:name="com.koreandrama.newappkorean.SettingsActivity"
             android:theme="@style/AppTheme.Nobar" />
         <activity
-            android:name="com.kdrama.newappkorean.SplashScreenActivity"
+            android:name="com.koreandrama.newappkorean.SplashScreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="fullSensor">
             <intent-filter>
@@ -117,32 +121,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.kdrama.newappkorean.ItemMovieActivity"
+            android:name="com.koreandrama.newappkorean.ItemMovieActivity"
             android:label="@string/title_activity_item_show"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.kdrama.newappkorean.ItemTVActivity"
+            android:name="com.koreandrama.newappkorean.ItemTVActivity"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Nobar" />
         <activity
-            android:name="com.kdrama.newappkorean.ItemSeriesActivity"
+            android:name="com.koreandrama.newappkorean.ItemSeriesActivity"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Nobar" />
         <activity
-            android:name="com.kdrama.newappkorean.SubscriptionActivity"
+            android:name="com.koreandrama.newappkorean.SubscriptionActivity"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Nobar" />
         <activity
-            android:name="com.kdrama.newappkorean.StripePaymentActivity"
+            android:name="com.koreandrama.newappkorean.StripePaymentActivity"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Nobar" />
         <activity
-            android:name="com.kdrama.newappkorean.PurchasePlanActivity"
+            android:name="com.koreandrama.newappkorean.PurchasePlanActivity"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Nobar" />
         <activity
-            android:name="com.kdrama.newappkorean.DownloadActivity"
+            android:name="com.koreandrama.newappkorean.DownloadActivity"
             android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Nobar" />
 

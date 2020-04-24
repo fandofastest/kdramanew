@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "193189332381",
-    "firebase_url": "https://kdrama-49490.firebaseio.com",
-    "project_id": "kdrama-49490",
-    "storage_bucket": "kdrama-49490.appspot.com"
+    "project_number": "1078521667034",
+    "firebase_url": "https://kdrama-62331.firebaseio.com",
+    "project_id": "kdrama-62331",
+    "storage_bucket": "kdrama-62331.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:193189332381:android:3c300b71673d3fad791b74",
+        "mobilesdk_app_id": "1:1078521667034:android:6dc1f13a713fce14c734e3",
         "android_client_info": {
-          "package_name": "com.kdrama.newappkorean"
+          "package_name": "com.koreandrama.newappkorean"
         }
       },
       "oauth_client": [
         {
-          "client_id": "193189332381-8l6k5sr456cg68vouljl3bfs2k4m035i.apps.googleusercontent.com",
+          "client_id": "1078521667034-7f6nmrlqp6vrlv3vnr4p7rvttom92uc3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDgI6GDDliYrjqBgd7x-NksRrXGvBH0W-o"
+          "current_key": "AIzaSyAhjt2VJY2qZHrF16a-FCbMSpQ6gNfsky4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "193189332381-8l6k5sr456cg68vouljl3bfs2k4m035i.apps.googleusercontent.com",
+              "client_id": "1078521667034-7f6nmrlqp6vrlv3vnr4p7rvttom92uc3.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
