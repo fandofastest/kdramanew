@@ -3,13 +3,13 @@ package com.koreandrama.newappkorean;
 public class Config {
 
     // copy your api url from php admin dashboard & paste below
-    public static final String API_SERVER_URL = "https://kdrama.website/newapp/new_api/";
+    public static final String API_SERVER_URL = "https://kdrama.website/newkd/new_api/";
 
     //copy your api key from php admin dashboard & paste below
     public static final String API_KEY = "bcdpunramiuuxheasg12ev0z";
 
     //copy your terms url from php admin dashboard & paste below
-    public static final String TERMS_URL = "https://kdrama.website/newapp/terms/";
+    public static final String TERMS_URL = "https://kdrama.website/newkd/terms/";
 
     //youtube video auto play
     public static boolean YOUTUBE_VIDEO_AUTO_PLAY = true;

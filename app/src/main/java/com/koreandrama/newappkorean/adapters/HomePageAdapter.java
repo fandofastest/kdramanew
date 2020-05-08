@@ -69,14 +69,10 @@ public class HomePageAdapter extends RecyclerView.Adapter<HomePageAdapter.Origin
         holder.lyt_parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (ctx instanceof MainActivity) {
                     ((MainActivity)ctx).showloading();
                 }
-
                 loadads(obj);
-
-
             }
         });
 
@@ -156,25 +152,16 @@ public class HomePageAdapter extends RecyclerView.Adapter<HomePageAdapter.Origin
     }
 
     public void loadads(CommonModels obj){
-
-
-
         mInterstitialAd = new com.google.android.gms.ads.InterstitialAd(ctx);
         mInterstitialAd.setAdUnitId(ApiResources.inter);
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
-
         mInterstitialAd.setAdListener(new AdListener() {
             @Override
             public void onAdLoaded() {
-
                 if (ctx instanceof MainActivity) {
                     ((MainActivity)ctx).hideoading();
                 }
-
-
-                mInterstitialAd.show();
-
-                // Code to be executed when an ad finishes loading.
+                mInterstitialAd.show();                // Code to be executed when an ad finishes loading.
             }
 
             @Override
